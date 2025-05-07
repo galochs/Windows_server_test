@@ -1,0 +1,6 @@
+---
+- name: Obtain information about a registry key property
+  ansible.windows.win_reg_stat:
+    path: HKLM:\SYSTEM\CurrentControlSet\Control\Lsa
+    name: RestrictAnonymous
+  register: RestrictAnonymousValue

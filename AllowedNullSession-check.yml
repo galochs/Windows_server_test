@@ -10,7 +10,8 @@
       
     - name: get content of file
       win_shell: 'c:\temp\AllowedNullSession-check.txt'  
-      register: file_contents
+      register: file_content
       
     - name: display content
-      msg: "{{ file_contents }} "
+      debug:
+      msg: "{{ file_content.stdout_lines }} "

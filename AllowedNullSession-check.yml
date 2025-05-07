@@ -5,5 +5,13 @@
   hosts: all 
   gather_facts: false
   tasks:
-    - name: Run powershell script
+    - name: run powershell script
       script: PSscripts/AllowedNullSession-check.ps1
+      
+    - name: get content of file
+      win_shell: 'c:\temp\AllowedNullSession-check.txt'  
+      register: file_contents
+      
+    - name: display content
+      debug:  
+      msg: "{{ file_contents.stdout_lines }} "

@@ -1,0 +1,9 @@
+---
+# This playbook runs the script to check registry value for allowed null session vulnerability on Windows hosts
+
+- name: AllowedNullSession-check
+  hosts: all 
+  gather_facts: false
+  tasks:
+    - name: Run powershell script
+      script: PSscripts/AllowedNullSession-check.ps1

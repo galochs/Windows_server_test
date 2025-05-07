@@ -13,5 +13,4 @@
       register: file_contents
       
     - name: display content
-      debug:  
       msg: "{{ file_contents.stdout_lines }} "

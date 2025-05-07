@@ -14,4 +14,4 @@
       
     - name: display content
       debug:
-      msg: "{{ file_content.stdout_lines }} "
+        msg: "{{ file_content.stdout_lines }} "

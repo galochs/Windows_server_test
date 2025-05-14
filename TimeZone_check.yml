@@ -1,0 +1,17 @@
+---
+# This playbook runs the script to check UTC time zone offset on Windows hosts
+
+- name: TimeZone-check
+  hosts: all 
+  gather_facts: false
+  tasks:
+    - name: run powershell script
+      script: PSscripts/TimeZone-check.ps1
+      
+    - name: get content of file
+      win_shell: get-content 'c:\temp\TimeZone-check.txt'  
+      register: file_content
+      
+    - name: display content
+      debug:
+        msg: "{{ file_content.stdout_lines }} "

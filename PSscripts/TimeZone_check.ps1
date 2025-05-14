@@ -1,1 +1,1 @@
-(Get-TimeZone).baseutcoffset -split ':' | Select-Object -First 1
+$value = (Get-TimeZone).baseutcoffset -split ':' | Select-Object -First 1
